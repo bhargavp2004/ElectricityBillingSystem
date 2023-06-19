@@ -4,8 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Billing form</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELECTRICITY BILLING SYSTEM | Billing form</title>
 <style>
 .alert {
 	padding: 15px;
@@ -85,7 +87,7 @@
 
 									<div class="d-flex justify-content-center">
 										<input type="submit" class="buttonclass" value="Generate Bill"
-											style="background-color: rgb(0, 0, 77); color: white; border-radius: 5px; padding: 10px;">
+											style="background-color: blue; color: white; border-radius: 5px; padding: 10px;">
 									</div>
 
 								</form>

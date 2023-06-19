@@ -2,341 +2,141 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELECTRICITY BILLING SYSTEM | HOME </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .social-links {
+      margin-top: 20px;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
-	rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:wght@400;500&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    .social-links a {
+      color: white;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".nav-link");
 
-<link rel="stylesheet" href="/css/index.css">
+      navLinks.forEach(function (navLink) {
+        navLink.addEventListener("click", function () {
+          const navbarToggler = document.querySelector(".navbar-toggler");
+          const navbarCollapse = document.querySelector(".navbar-collapse");
+
+          if (navbarToggler.classList.contains("collapsed") && !navbarCollapse.classList.contains("show")) {
+            // Do nothing if the toggler is already collapsed and the collapse content is not shown
+            return;
+          }
+
+          if (navbarCollapse.classList.contains("show")) {
+            navbarToggler.classList.add("collapsed");
+            navbarCollapse.classList.remove("show");
+          } else {
+            navbarToggler.classList.remove("collapsed");
+            navbarCollapse.classList.add("show");
+          }
+        });
+      });
+    });
+  </script>
 </head>
-<style>
-body {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	align-items: center;
-	font-family: montserrat;
-	text-align: center;
-}
-
-.username {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	color: white;
-	font-size: 16px;
-	display: inline-block;
-}
-
-.msgclass {
-	color: white;
-	background-color: rgba(0, 0, 77, 0.9);
-}
-
-.alert {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-}
-
-.alert-success {
-	color: #3c763d;
-	background-color: #dff0d8;
-	border-color: #d6e9c6;
-}
-
-.alert-danger {
-	color: #a94442;
-	background-color: #f2dede;
-	border-color: #ebccd1;
-}
-
-a {
-	text-decoration: none;
-}
-
-.userClass {
-	color: white;
-	font-family: Montserrat;
-}
-
-body {
-	background-image: url('/images/MainPicture.jpg');
-	/* background-image: url('/media/D/B.TECH/4TH SEMESTER/SEPP/HotelManagementSystem/static/images/pexels-pixabay-258154.jpg'); */
-	background-size: cover;
-	background-repeat: none;
-	font-family: Arial, Helvetica, sans-serif;
-	align-items: center;
-}
-
-.nav {
-	list-style: none;
-	margin-top: 80px;
-	/* padding:0; */
-	text-align: center;
-}
-
-.nav li {
-	display: inline;
-	opacity: 1.0;
-}
-
-.nav a {
-	display: inline-block;
-	padding: 20px;
-	text-decoration: none;
-	color: white;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 20px;
-	font-weight: bold;
-	text-shadow: 65px;
-	transition: font-size 0.4s;
-}
-/* 
-.nav:hover{
-  font-size : 25px;
-} */
-.nav a:hover {
-	font-size: 25px;
-}
-
-.image {
-	background: rgba(0, 0, 77, 0.9); /*rgba(59, 59, 142, 0.5)*/
-	padding: 50px;
-	position: relative;
-}
-
-.image2 {
-	background-image: url('/images/MainPicture.jpg');
-	padding: 150px;
-	width: 35px;
-	text-align: center;
-}
-
-img {
-	width: 150px;
-/* 	transition: width 0.5s; */
-}
-
-.submitbutton {
-	background-color: rgba(0, 0, 77, 0.9);
-	padding: 10px;
-	color: white;
-	font-size: 18px;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 80px;
-	border-radius: 5px;
-	text-shadow: 65px;
-	transition: font-size 0.4s;
-}
-
-.submitbutton:hover {
-	font-size: 24px;
-}
-
-h1 {
-	color: white;
-	font-size: 50px;
-	font-family: Candal;
-	text-shadow: 65px;
-}
-
-p {
-	color: white;
-	font-family: Candal;
-	text-shadow: 65px;
-	font-size: 20px;
-}
-
-.col-1 {
-	width: 8.33%;
-}
-
-.col-2 {
-	width: 16.66%;
-}
-
-.col-3 {
-	width: 25%;
-}
-
-.col-4 {
-	width: 33.33%;
-}
-
-.col-5 {
-	width: 41.66%;
-}
-
-.col-6 {
-	width: 50%;
-}
-
-.col-7 {
-	width: 58.33%;
-}
-
-.col-8 {
-	width: 66.66%;
-}
-
-.col-9 {
-	width: 75%;
-}
-
-.col-10 {
-	width: 83.33%;
-}
-
-.col-11 {
-	width: 91.66%;
-}
-
-.col-12 {
-	width: 100%;
-}
-
-@media only screen and (max-width: 768px) {
-	/* For mobile phones: */
-	[class*="col-"] {
-		width: 100%;
-	}
-}
-
-.leftclass {
-	float: left;
-	color: white;
-	margin-top: 390px;
-	font-size: 18px;
-	transition: font-size 0.4s;
-}
-
-.leftclass:hover {
-	font-size: 25px;
-}
-
-/* .image:hover{
-
-} */
-.book_now {
-	background-color: rgba(0, 0, 77, 0.9);
-	padding: 10px;
-	color: white;
-	font-size: 18px;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 80px;
-	border-radius: 5px;
-	text-shadow: 65px;
-	transition: font-size 0.4s;
-	text-decoration: none;
-}
-
-#messages{
-color : white;
-}
-</style>
 
 <body>
-	<center>
-  <c:if test = "${not empty msg}">
-  <div id="messages">
-   <c:forEach var = "t" items = "msg"> 
-      <div class="alert-success">        
-        ${msg}
+  <!-- Horizontal Navigation bar for page routing -->
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: blue; color : white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Electricity Billing System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <c:if
+					test="${sessionScope.username != null and sessionScope.type != null}">
+
+					<ul class="navbar-nav">
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/"
+								class="nav-link">HOME</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/addMeterData"
+								class="nav-link">ADD METER DATA</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/logout"
+								class="nav-link">LOGOUT</a></li>
+					</ul>
+	
+				</c:if>
+                <c:if
+					test="${sessionScope.username == null and sessionScope.type == null}">
+	
+					<ul class="navbar-nav">
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/"
+								class="nav-link">HOME</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/addCustomer"
+								class="nav-link">REGISTER AS CUSTOMER</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/login"
+								class="nav-link">LOGIN AS CUSTOMER</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/loginReader"
+								class="nav-link">LOGIN AS READER</a></li>
+					</ul>
+				</c:if>
+                <c:if
+					test="${sessionScope.username != null and sessionScope.type == null}">
+
+					<ul class="navbar-nav">
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/"
+								class="nav-link">HOME</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/addMeter"
+								class="nav-link">REGISTER A METER</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/logout"
+								class="nav-link">LOGOUT</a></li>
+					</ul>
+				</c:if>
       </div>
-    </c:forEach>
-  </div>
-  </c:if>
+    </div>
+  </nav>
+  
+    <div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div>
+      <h1 class="text-center mb-4">Made Easier For You</h1>
+      <p class="text-center mb-4">Experience hassle-free and efficient electricity billing with our reliable and user-friendly system</p>
 
-  <script>
-    setTimeout(function() {
-      var messages = document.getElementById("messages");
-      if (messages) {
-        messages.style.display = 'none';
-      }
-    }, 3000);
-  </script>
+      <c:if test="${sessionScope.username != null and sessionScope.type == null}">
+        <div class="text-center">
+          <a class="pay_now btn btn-primary btn-lg" href="<%=request.getContextPath()%>/pay">PAY BILL</a>
+        </div>
+      </c:if>
 
-		<div class="image">
-		   <img src="/images/ebs.png" alt="src">
-		 <h2 style="background-color : rgb(255,127,0);"> ELECTRICITY BILLING SYSTEM </h2>
-			<c:if
-				test="${sessionScope.username != null and sessionScope.type != null}">
-				<div class="username">
-					<a href="<%=request.getContextPath()%>/renderProfile" class="userClass">Welcome
-						${sessionScope.username}</a>
-				</div>
-				<ul class="nav">
-					<li><a href="<%=request.getContextPath()%>/">HOME</a></li>
-					<li><a href="<%=request.getContextPath()%>/addMeterData">ADD
-							METER DATA</a></li>
-					<li><a href="<%=request.getContextPath()%>/logout">LOGOUT</a></li>
-				</ul>
-
-			</c:if>
-			<c:if
-				test="${sessionScope.username == null and sessionScope.type == null}">
-				<div class="username">
-					<a href="<%=request.getContextPath()%>/renderProfile" class="userClass">Welcome
-						${sessionScope.username}</a>
-				</div>
-
-				<ul class="nav">
-					<li><a href="<%=request.getContextPath()%>/">HOME</a></li>
-					<li><a href="<%=request.getContextPath()%>/addCustomer">
-							REGISTER AS CUSTOMER </a></li>
-					<li><a href="<%=request.getContextPath()%>/login"> LOGIN
-							AS CUSTOMER </a></li>
-					<li><a href="<%=request.getContextPath()%>/loginReader">
-							LOGIN AS READER </a></li>
-				</ul>
-			</c:if>
-			<c:if
-				test="${sessionScope.username != null and sessionScope.type == null}">
-				<div class="username">
-					<a href="<%=request.getContextPath()%>/renderProfile" class="userClass">Welcome
-						${sessionScope.username}</a>
-				</div>
-				<ul class="nav">
-					<li><a href="<%=request.getContextPath()%>/">HOME</a></li>
-					<li><a href="<%=request.getContextPath()%>/addMeter">REGISTER
-							A METER</a></li>
-					<li><a href="<%=request.getContextPath()%>/logout">LOGOUT</a></li>
-				</ul>
-			</c:if>
-		</div>
-		<h1>Made Easier For You</h1>
-		<p>Experience hassle-free and efficient electricity billing with
-			our reliable and user-friendly system</p>
-			
-		<c:if test ="${sessionScope.username != null and sessionScope.type == null}">
-		<a class="book_now" href="<%=request.getContextPath()%>/pay"> PAY
-			BILL </a>
-			</c:if>
-			
-			<c:if test ="${sessionScope.username == null}">
-		<a class="book_now" href="<%=request.getContextPath()%>/login"> PAY
-			BILL </a>
-			</c:if>
-	</center>
+      <c:if test="${sessionScope.username == null}">
+        <div class="text-center">
+          <a class="pay_now btn btn-primary btn-lg" href="<%=request.getContextPath()%>/login">PAY BILL</a>
+        </div>
+      </c:if>
+    </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pzj9p1F2lCj9kgt6UkRAfIEQ+hTolviKxKqR6FcAib4Jk3D60ADK3cv0S+2D88xy"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

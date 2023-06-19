@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register a meter</title>
+<title>ELECTRICITY BILLING SYSTEM | REGISTER A METER</title>
 <style>
 .alert {
 	padding: 15px;
@@ -83,7 +83,7 @@
 
 									<div class="d-flex justify-content-center">
 										<input type="submit" class="buttonclass" value="Add Meter"
-											style="background-color: rgb(0, 0, 77); color: white; border-radius: 5px; padding: 10px;">
+											style="background-color: blue; color: white; border-radius: 5px; padding: 10px;">
 									</div>
 
 								</form>
